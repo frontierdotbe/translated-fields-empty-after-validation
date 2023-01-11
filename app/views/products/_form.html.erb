@@ -1,0 +1,22 @@
+<%= form_with model: @product do |form| %>
+  <h1>Products</h1>
+  <div class="form-row">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="form-row">
+    <%= form.label :handle %>
+    <%= form.text_field :handle %>
+  </div>
+
+  <%= form.fields_for :variants do |variant| %>
+    <h2>Variant</h2>
+    <div class="form-row">
+      <%= variant.label :title %>
+      <%= variant.text_field :title %>
+    </div>
+  <% end %>
+
+  <%= form.submit %>
+<% end %>
